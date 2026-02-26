@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic và Video</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        /* Infographic */
+        .infographic-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .infographic {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .infographic img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .infographic img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Video */
+        .video-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        /* Alternative: Video player styling */
+        .video-player {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .video-description {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .infographic-description {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📊 Infographic & Video Showcase</h1>
+            <p>Hiển thị infographic và video MP4 trên trang web</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Infographic Section -->
+            <div class="infographic-section">
+                <h2 class="section-title">📈 Infographic</h2>
+                <div class="infographic">
+                    <!-- Thay đổi src với đường dẫn infographic của bạn -->
+                    <img src="Infographic.png" 
+                         alt="Infographic về dữ liệu kinh doanh"
+                         loading="lazy">
+                </div>
+                <div class="infographic-description">
+                    <p> Lợi ích của công nghệ số trong việc nâng cao trải nghiệm học tập cho học sinh và sinh viên hiện đại.</p>
+                </div>
+            </div>
+
+            <!-- Video Section -->
+            <div class="video-section">
+                <h2 class="section-title">🎬 Video MP4</h2>
+                <div class="video-container">
+                    <!-- Thay đổi src với đường dẫn video MP4 của bạn -->
+                    <video class="video-player" 
+                           controls 
+                           poster="https://via.placeholder.com/500x400?text=Video+Thumbnail"
+                           preload="metadata">
+                        <source src="video.mp4" type="video/mp4">
+                        <source src="your-video.webm" type="video/webm">
+                        Trình duyệt của bạn không hỗ trợ video HTML5.
+                    </video>
+                </div>
+                <div class="video-description">
+                    <p><strong>Tiêu đề Video:</strong> Mô tả chi tiết về video của bạn</p>
+                    <p>Video này cung cấp chi tiết về lợi ích của công nghệ AI về cơ khí
+                    
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div style="padding: 0 40px 40px;">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">92%</div>
+                    <div class="stat-label">Tỷ lệ Hài Lòng</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Lượt Xem</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2024</div>
+                    <div class="stat-label">Năm Khởi Động</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
